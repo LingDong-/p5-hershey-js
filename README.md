@@ -1,7 +1,7 @@
 ![](doc/screen000.png)
 
 
-p5.js Hershey Vector Font Library. ([Live Demo](https://github.com/LingDong-/p5-hershey-js))
+p5.js Hershey Vector Font Library. ([Live Demo](https://lingdong-.github.io/p5-hershey-js/))
 
 > The Hershey fonts are a collection of vector fonts developed c. 1967 by Dr. Allen Vincent Hershey at the Naval Weapons Laboratory, originally designed to be rendered using vectors on early cathode ray tube displays. The fonts are publicly available and have few usage restrictions. Vector fonts are easily scaled and rotated in two or three dimensions; consequently the Hershey fonts have been widely used in computer graphics, computer-aided design programs, and more recently also in computer-aided manufacturing applications like laser engraving. ([Wikipedia](https://en.wikipedia.org/wiki/Hershey_fonts))
 
@@ -87,8 +87,8 @@ P5.hershey.putText("Hello World!",{
 
 ## Examples
 
-- [Live Demo](https://github.com/LingDong-/p5-hershey-js)
-- [ttf2hershey](https://github.com/LingDong-/ttf2hershey)
+- [Live Demo](https://lingdong-.github.io/p5-hershey-js/), see `index.html` for details.
+- [ttf2hershey](https://github.com/LingDong-/ttf2hershey), a tool for converting True Type Fonts to Hershey fonts.
 
 
 ## Preview
