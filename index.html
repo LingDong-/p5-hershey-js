@@ -1,0 +1,74 @@
+<!DOCTYPE html>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+<script src="p5.hershey.js"></script>  
+<script src="p5.hershey.data.js"></script>  
+<script>
+
+var pangrams = [
+  "p5.hershey.js",
+  "Jived fox nymph grabs quick waltz.",
+  "Glib jocks quiz nymph to vex dwarf.",
+  "Sphinx of black quartz, judge my vow.",
+  "How vexingly quick daft zebras jump!",
+  "The five boxing wizards jump quickly.",
+  "Jackdaws love my big sphinx of quartz.",
+  "Pack my box with five dozen liquor jugs.",
+]
+
+var cmapnames = []
+var cmaps = [];
+
+
+function setup() {
+  createCanvas(window.innerWidth, 2200);
+  for (var k in FONT_HERSHEY){
+    if (k != "DATA"){
+      cmapnames.push(k);
+    }
+  }
+
+  for (var i = 0; i < cmapnames.length; i++){
+    cmaps.push(FONT_HERSHEY[cmapnames[i]]);
+  }
+  console.log(P5.hershey.validateFont(FONT_HERSHEY.DATA));
+  noLoop()
+}
+function draw() {
+  background(255);
+ 
+  var txt;
+
+  for (var i = 0; i < cmaps.length; i++){
+    push();
+    translate(50,108*(i+1));
+
+    push();
+    noStroke();
+    fill(0);
+    text(cmapnames[i],0,40);
+    pop();
+
+    push();
+    scale(1.5);
+    noFill();
+    stroke(0);
+    strokeWeight(1);
+    txt = pangrams[i%pangrams.length];
+    P5.hershey.putText(txt,{
+      cmap:cmaps[i],
+    })
+    pop();
+
+    pop();
+  }
+}
+
+</script>
+<html>
+  <head>
+  </head>
+
+  <body style="text-align:center; font-family:sans-serif;">
+    <h1>p5.hershey.js</h1>
+  </body>
+</html>
