@@ -101,7 +101,7 @@ P5.hershey={
     if (args.cmap == undefined){args.cmap = FONT_HERSHEY.SIMPLEX};
     var sum = 0;
     for (var i = 0; i < s.length; i++){
-      var entry = args.font[args.cmap(c.charCodeAt(0))];
+      var entry = args.font[args.cmap(s[i].charCodeAt(0))];
       if (entry == undefined){
         return 0;
       }
