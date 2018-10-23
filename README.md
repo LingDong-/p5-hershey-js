@@ -47,11 +47,13 @@ pop();
 ```javascript
 P5.hershey.putText("Hello World!",{
 	cmap:  HERSHEY_FONT.GOTHIC_GERMAN_TRIPLEX,
+	align: "center",
 	noise: 0.5,
 });
 ```
 
 - `cmap` specifies the character mapping to use, see **Supported Character Sets** for details.
+- `align` can be one of `left`, `center` or `right`.
 - `noise` can be used to add special effects to the vertices. `noise` can be either of the following datatypes:
 	- if `noise` is a number, a default `randomGaussian` filter is applied to give a jiggly/nervous effect using `noise` as the standard deviation.
 	- if `noise` is an object of the form `{x: (x,y)=>(x_offset), y: (x,y)=>(y_offset)}`, `noise.x` and `noise.y` will be called on each vertex, and the return value is used as the offset for the respective axis.
@@ -84,6 +86,12 @@ P5.hershey.putText("Hello World!",{
 	cmap:  cmap,
 });
 ```
+
+### Other Tools
+
+- `P5.hershey.estimateTextWidth(text, args)` returns the width in pixels of the text if it is to be drawn with arguments `args`.
+- `P5.hershey.validateFont(font_data)` returns an `Array` containing indices of all the invalid glyphs in a font object.
+
 
 ## Examples
 
