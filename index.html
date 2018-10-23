@@ -4,8 +4,7 @@
 <script src="p5.hershey.data.js"></script>  
 <script>
 
-var pangrams = [
-  "p5.hershey.js",
+var teststrings = [
   "Jived fox nymph grabs quick waltz.",
   "Glib jocks quiz nymph to vex dwarf.",
   "Sphinx of black quartz, judge my vow.",
@@ -30,14 +29,29 @@ function setup() {
   for (var i = 0; i < cmapnames.length; i++){
     cmaps.push(FONT_HERSHEY[cmapnames[i]]);
   }
-  console.log(P5.hershey.validateFont(FONT_HERSHEY.DATA));
-  noLoop()
+
+  render();
+
+  var input = document.getElementById("test_field");
+  input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      document.getElementById("test_button").click();
+    }
+  });
 }
-function draw() {
+
+function draw(){
+
+}
+
+function setTestString(){
+  teststrings = [document.getElementById("test_field").value]
+}
+
+function render() {
   background(255);
  
-  var txt;
-
   for (var i = 0; i < cmaps.length; i++){
     push();
     translate(50,108*(i+1));
@@ -53,7 +67,7 @@ function draw() {
     noFill();
     stroke(0);
     strokeWeight(1);
-    txt = pangrams[i%pangrams.length];
+    var txt = teststrings[i%teststrings.length];
     P5.hershey.putText(txt,{
       cmap:cmaps[i],
     })
@@ -70,5 +84,9 @@ function draw() {
 
   <body style="text-align:center; font-family:sans-serif;">
     <h1>p5.hershey.js</h1>
+    <div>
+      <input type="text" id="test_field" size="50" value="Your Text Here"/>
+      <button type="button" id='test_button' onclick="setTestString();render()">Test</button>
+    </div>
   </body>
 </html>
