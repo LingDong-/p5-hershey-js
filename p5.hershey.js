@@ -96,7 +96,6 @@ P5.hershey={
   },
   estimateTextWidth : function (s, args){
     if (args == undefined){args = {}}
-    if (args.font == undefined){args.font = FON}
     if (args.font == undefined){args.font = FONT_HERSHEY.DATA}
     if (args.cmap == undefined){args.cmap = FONT_HERSHEY.SIMPLEX};
     var sum = 0;
