@@ -46,7 +46,7 @@ pop();
 
 ```javascript
 P5.hershey.putText("Hello World!",{
-	cmap:  HERSHEY_FONT.GOTHIC_GERMAN_TRIPLEX,
+	cmap:  FONT_HERSHEY.GOTHIC_GERMAN_TRIPLEX,
 	align: "center",
 	noise: 0.5,
 });
